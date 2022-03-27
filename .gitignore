@@ -1,1 +1,3 @@
-*/__pychache__
+# *./__pycache__
+/Controller/__pycache__
+/View/__pycache__

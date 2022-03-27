@@ -14,9 +14,63 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(800, 600)
+        MainWindow.resize(800, 337)
+        MainWindow.setStyleSheet("background-color: rgb(39, 77, 116);")
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
+        self.label = QtWidgets.QLabel(self.centralwidget)
+        self.label.setGeometry(QtCore.QRect(240, 30, 351, 31))
+        self.label.setStyleSheet("color: rgb(255, 255, 255);\n"
+"font: 75 8pt \"Sitka Subheading\";\n"
+"font: 75 10pt \"MS Shell Dlg 2\";")
+        self.label.setObjectName("label")
+        self.comboBox_listaUbicaciones = QtWidgets.QComboBox(self.centralwidget)
+        self.comboBox_listaUbicaciones.setGeometry(QtCore.QRect(130, 150, 141, 31))
+        self.comboBox_listaUbicaciones.setStyleSheet("color: rgb(255, 255, 255);\n"
+"background-color: rgb(24, 48, 72);")
+        self.comboBox_listaUbicaciones.setObjectName("comboBox_listaUbicaciones")
+        self.label_2 = QtWidgets.QLabel(self.centralwidget)
+        self.label_2.setGeometry(QtCore.QRect(170, 110, 71, 31))
+        self.label_2.setStyleSheet("color: rgb(255, 255, 255);\n"
+"font: 75 8pt \"MS Shell Dlg 2\";")
+        self.label_2.setObjectName("label_2")
+        self.label_3 = QtWidgets.QLabel(self.centralwidget)
+        self.label_3.setGeometry(QtCore.QRect(340, 110, 121, 31))
+        self.label_3.setStyleSheet("color: rgb(255, 255, 255);\n"
+"font: 75 8pt \"MS Shell Dlg 2\";")
+        self.label_3.setObjectName("label_3")
+        self.spinBox_numHabitaciones = QtWidgets.QSpinBox(self.centralwidget)
+        self.spinBox_numHabitaciones.setGeometry(QtCore.QRect(380, 150, 51, 21))
+        self.spinBox_numHabitaciones.setStyleSheet("color: rgb(255, 255, 255);\n"
+"background-color: rgb(24, 48, 72);")
+        self.spinBox_numHabitaciones.setMinimum(1)
+        self.spinBox_numHabitaciones.setObjectName("spinBox_numHabitaciones")
+        self.label_4 = QtWidgets.QLabel(self.centralwidget)
+        self.label_4.setGeometry(QtCore.QRect(540, 110, 121, 31))
+        self.label_4.setStyleSheet("color: rgb(255, 255, 255);\n"
+"font: 75 8pt \"MS Shell Dlg 2\";")
+        self.label_4.setObjectName("label_4")
+        self.doubleSpinBox_metrosCuadrados = QtWidgets.QDoubleSpinBox(self.centralwidget)
+        self.doubleSpinBox_metrosCuadrados.setGeometry(QtCore.QRect(560, 150, 62, 22))
+        self.doubleSpinBox_metrosCuadrados.setStyleSheet("color: rgb(255, 255, 255);\n"
+"background-color: rgb(24, 48, 72);")
+        self.doubleSpinBox_metrosCuadrados.setSingleStep(10.0)
+        self.doubleSpinBox_metrosCuadrados.setObjectName("doubleSpinBox_metrosCuadrados")
+        self.pushButton_consultarPrecio = QtWidgets.QPushButton(self.centralwidget)
+        self.pushButton_consultarPrecio.setGeometry(QtCore.QRect(330, 230, 141, 28))
+        self.pushButton_consultarPrecio.setStyleSheet("color: rgb(255, 255, 255);")
+        self.pushButton_consultarPrecio.setObjectName("pushButton_consultarPrecio")
+        self.label_precio = QtWidgets.QLabel(self.centralwidget)
+        self.label_precio.setGeometry(QtCore.QRect(330, 290, 141, 21))
+        self.label_precio.setStyleSheet("color: rgb(255, 255, 255);\n"
+"font: 75 10pt \"Nirmala UI\";")
+        self.label_precio.setText("")
+        self.label_precio.setAlignment(QtCore.Qt.AlignCenter)
+        self.label_precio.setObjectName("label_precio")
+        self.pushButton_mostrarGrafica = QtWidgets.QPushButton(self.centralwidget)
+        self.pushButton_mostrarGrafica.setGeometry(QtCore.QRect(610, 280, 131, 28))
+        self.pushButton_mostrarGrafica.setStyleSheet("color: rgb(255, 255, 255);")
+        self.pushButton_mostrarGrafica.setObjectName("pushButton_mostrarGrafica")
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
@@ -25,3 +79,9 @@ class Ui_MainWindow(object):
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
+        self.label.setText(_translate("MainWindow", "PREDICCIÓN DE BÚSQUEDA PARA HOGARES"))
+        self.label_2.setText(_translate("MainWindow", "UBICACIÓN"))
+        self.label_3.setText(_translate("MainWindow", "No. de Habitaciones"))
+        self.label_4.setText(_translate("MainWindow", "Metros Cuadrados"))
+        self.pushButton_consultarPrecio.setText(_translate("MainWindow", "CONSULTAR PRECIO"))
+        self.pushButton_mostrarGrafica.setText(_translate("MainWindow", "MOSTRAR GRÁFICA"))

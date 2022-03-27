@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>800</width>
-    <height>281</height>
+    <height>337</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -132,6 +132,58 @@ background-color: rgb(24, 48, 72);</string>
     </property>
     <property name="singleStep">
      <double>10.000000000000000</double>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_consultarPrecio">
+    <property name="geometry">
+     <rect>
+      <x>330</x>
+      <y>230</y>
+      <width>141</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(255, 255, 255);</string>
+    </property>
+    <property name="text">
+     <string>CONSULTAR PRECIO</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_precio">
+    <property name="geometry">
+     <rect>
+      <x>330</x>
+      <y>290</y>
+      <width>141</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(255, 255, 255);
+font: 75 10pt &quot;Nirmala UI&quot;;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_mostrarGrafica">
+    <property name="geometry">
+     <rect>
+      <x>610</x>
+      <y>280</y>
+      <width>131</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(255, 255, 255);</string>
+    </property>
+    <property name="text">
+     <string>MOSTRAR GRÁFICA</string>
     </property>
    </widget>
   </widget>
