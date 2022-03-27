@@ -25,8 +25,9 @@ class HomeViewController(QMainWindow):
         trainLoss = [1,2,3,4,5,6,7,8] #TODO: LIST OF TRAIN LOSS
         location = self.ui.comboBox_listaUbicaciones.currentText()
         rooms = int(self.ui.spinBox_numHabitaciones.text())
+        bathrooms = int(self.ui.spinBox_numBanios.text())
         squareMeter = double(self.ui.doubleSpinBox_metrosCuadrados.text())
-        print(f'location: {location}, rooms: {rooms}, squareMeter: {squareMeter}')
+        print(f'location: {location},rooms: {rooms} ,bathrooms: {bathrooms} ,squareMeter: {squareMeter}')
 
         precio = f'$1000000' #TODO: implementar el predict de la red neuronal
 
