@@ -1,5 +1,3 @@
-from re import L
-import urllib.request
 from bs4 import BeautifulSoup
 import numpy as np
 import requests
