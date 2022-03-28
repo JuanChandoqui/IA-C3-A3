@@ -54,6 +54,7 @@ class Ui_MainWindow(object):
         self.doubleSpinBox_metrosCuadrados.setGeometry(QtCore.QRect(480, 150, 62, 22))
         self.doubleSpinBox_metrosCuadrados.setStyleSheet("color: rgb(255, 255, 255);\n"
 "background-color: rgb(24, 48, 72);")
+        self.doubleSpinBox_metrosCuadrados.setMaximum(1000.0)
         self.doubleSpinBox_metrosCuadrados.setSingleStep(10.0)
         self.doubleSpinBox_metrosCuadrados.setProperty("value", 0.0)
         self.doubleSpinBox_metrosCuadrados.setObjectName("doubleSpinBox_metrosCuadrados")
@@ -62,7 +63,7 @@ class Ui_MainWindow(object):
         self.pushButton_consultarPrecio.setStyleSheet("color: rgb(255, 255, 255);")
         self.pushButton_consultarPrecio.setObjectName("pushButton_consultarPrecio")
         self.label_precio = QtWidgets.QLabel(self.centralwidget)
-        self.label_precio.setGeometry(QtCore.QRect(430, 290, 141, 21))
+        self.label_precio.setGeometry(QtCore.QRect(420, 290, 161, 21))
         self.label_precio.setStyleSheet("color: rgb(255, 255, 255);\n"
 "font: 75 10pt \"Nirmala UI\";")
         self.label_precio.setText("")

@@ -5,7 +5,7 @@ import numpy as np
 import pandas as pd
 
 
-dataset = pd.read_csv("dataset.csv").sample(frac=1).reset_index(drop=True)
+dataset = pd.read_csv("./Model/dataset.csv").sample(frac=1).reset_index(drop=True)
 
 dataset['location'] = dataset['location'].map({'TUXTLA GUTIERREZ':0,'SAN CRISTOBAL DE LAS CASAS':1,'COMITAN':2})
 dataset['propertyType'] = dataset['propertyType'].map({'Casa':0,'Departamento':1})
@@ -29,13 +29,7 @@ def cargar_modelado():
     history = model.fit(x_train,yd_train, epochs=50, validation_data=(x_test,yd_test))
     return model, history
 
-modelo, historial = cargar_modelado()
-result = modelo.predict([[0,0,100,3,2]])
-print(result)
+# modelo, historial = cargar_modelado()
+# result = modelo.predict([[0,0,100,3,2]])
+# print(result)
 
-plt.plot(historial.history['val_loss'], label='val_loss')
-plt.plot(historial.history['loss'], label='loss')
-plt.xlabel('Número de iteraciones')
-plt.ylabel('Error')
-plt.legend()
-plt.show()

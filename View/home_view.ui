@@ -130,6 +130,9 @@ font: 75 8pt &quot;MS Shell Dlg 2&quot;;</string>
      <string notr="true">color: rgb(255, 255, 255);
 background-color: rgb(24, 48, 72);</string>
     </property>
+    <property name="maximum">
+     <double>1000.000000000000000</double>
+    </property>
     <property name="singleStep">
      <double>10.000000000000000</double>
     </property>
@@ -156,9 +159,9 @@ background-color: rgb(24, 48, 72);</string>
    <widget class="QLabel" name="label_precio">
     <property name="geometry">
      <rect>
-      <x>430</x>
+      <x>420</x>
       <y>290</y>
-      <width>141</width>
+      <width>161</width>
       <height>21</height>
      </rect>
     </property>

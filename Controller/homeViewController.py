@@ -1,6 +1,7 @@
 from PyQt5.QtWidgets import QMainWindow
 from numpy import double
 import matplotlib.pyplot as plt
+from Model.red import cargar_modelado
 
 from View.Ui_home_view import Ui_MainWindow
 
@@ -10,11 +11,12 @@ class HomeViewController(QMainWindow):
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
         self.ui.comboBox_listaUbicaciones
-        self.ui.pushButton_mostrarGrafica.setVisible(False)
         self.ui.label_errorDepartamento.setVisible(False)
         self.fillLocations()
         self.ui.pushButton_consultarPrecio.clicked.connect(self.consultPrice)
-        self.ui.pushButton_mostrarGrafica.clicked.connect(self.showGraphic)
+        self.modelo, self.historial = cargar_modelado()
+        self.ui.pushButton_mostrarGrafica.clicked.connect(lambda: self.generateGraphic(self.historial),)
+        
 
     
     def fillLocations(self):
@@ -31,8 +33,7 @@ class HomeViewController(QMainWindow):
         bathrooms = int(self.ui.spinBox_numBanios.text())
 
         if(location == 'COMITAN' and propertyType == 'DEPARTAMENTO'):
-            self.ui.label_errorDepartamento.setVisible(True)
-            self.ui.pushButton_mostrarGrafica.setVisible(False)  
+            self.ui.label_errorDepartamento.setVisible(True) 
         else:
             if(location == 'TUXTLA GUTIERREZ'):
                 location = 0
@@ -48,20 +49,18 @@ class HomeViewController(QMainWindow):
 
             print(f'location: {location}, propertyType: {propertyType}, rooms: {rooms} ,bathrooms: {bathrooms} ,squareMeter: {squareMeter}')
             
-            precio = f'$1000000' #TODO: implementar el predict de la red neuronal
-            trainLoss = [1,2,3,4,5,6,7,8] #TODO: LIST OF TRAIN LOSS
-            
+            valuePrediction = [[location, propertyType, squareMeter, rooms, bathrooms]]
+            result = self.modelo.predict(valuePrediction)
+            precio = f'${result[0][0]} MXN'
+
             self.ui.label_errorDepartamento.setVisible(False)
-            self.ui.label_precio.setText(precio)
-            self.ui.pushButton_mostrarGrafica.setVisible(True)     
-            self.generateGraphic(trainLoss)        
+            self.ui.label_precio.setText(precio)   
+                   
 
-
-    def generateGraphic(self, listLoss):
-        plt.plot(listLoss, label="LOSS")
+    def generateGraphic(self, historial):
+        plt.plot(historial.history['val_loss'], label='val_loss')
+        plt.plot(historial.history['loss'], label='loss')
+        plt.xlabel('Número de iteraciones')
+        plt.ylabel('Error')
         plt.legend()
-        plt.xlabel("iteraciones")
-        plt.ylabel("errores")
-
-    def showGraphic(self):
         plt.show()
