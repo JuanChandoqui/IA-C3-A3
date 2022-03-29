@@ -1,4 +1,4 @@
-from PyQt5.QtWidgets import QMainWindow
+from PyQt5.QtWidgets import QMainWindow, QWidget
 from numpy import double
 import matplotlib.pyplot as plt
 from Model.red import cargar_modelado
