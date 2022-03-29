@@ -20,7 +20,7 @@ class HomeViewController(QMainWindow):
 
     
     def fillLocations(self):
-        listLocation = ['COMITAN', 'TUXTLA GUTIERREZ', 'SAN CRISTOBAL DE LAS CASAS']
+        listLocation = ['COMITÁN', 'TUXTLA GUTIÉRREZ', 'SAN CRISTÓBAL DE LAS CASAS']
         listProperties = ['CASA', 'DEPARTAMENTO']
         self.ui.comboBox_listaUbicaciones.addItems(listLocation)
         self.ui.comboBox_listaPropiedades.addItems(listProperties)
@@ -35,11 +35,11 @@ class HomeViewController(QMainWindow):
         if(location == 'COMITAN' and propertyType == 'DEPARTAMENTO'):
             self.ui.label_errorDepartamento.setVisible(True) 
         else:
-            if(location == 'TUXTLA GUTIERREZ'):
+            if(location == 'TUXTLA GUTIÉRREZ'):
                 location = 0
-            elif(location == 'SAN CRISTOBAL DE LAS CASAS'):
+            elif(location == 'SAN CRISTÓBAL DE LAS CASAS'):
                 location = 1
-            elif(location == 'COMITAN'):
+            elif(location == 'COMITÁN'):
                 location = 2
             
             if(propertyType == 'CASA'):
