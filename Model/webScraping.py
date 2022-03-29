@@ -55,7 +55,6 @@ def webScraping():
 
                 value = value.replace('\n', '').replace(' ', '').replace('MX$', '').replace(',','').replace('\t', '')
                 value = int(value)
-                # print(value)
                 list_prices.append(value)
 
 
@@ -63,7 +62,6 @@ def webScraping():
                 value = squareMeter.text.strip()
                 value = value.replace('m2', '').replace(',', '')
                 value = np.double(value)
-                # print(value)
                 list_squaredMeter.append(value)
 
 
@@ -81,14 +79,12 @@ def webScraping():
                 value = value.strip()
                 value = int(value)
                 list_rooms.append(value)
-                # print(value)
 
 
             for bathroom in bathroom_elements:
                 value = bathroom.text.strip()
                 value = value.strip()
                 value = int(value)
-                # print(value)
                 list_bathrooms.append(value)      
 
 
@@ -99,14 +95,12 @@ def webScraping():
                 if(len(list_squaredMeter) == len(list_locations)):
                     break
         
-        # print(f'len list location: {len(list_locations)},len  list property type: {len(list_property_type)} ,len list square: {len(list_squaredMeter)}, len list rooms: {len(list_rooms)}, len list bathrooms: {len(list_bathrooms)}, len list prices: {len(list_prices)}')  
     return list_locations, list_property_type, list_squaredMeter, list_rooms, list_bathrooms, list_prices
 
 
 
 def createDataFrame():
     list_locations, list_property_type, list_squaredMeter, list_rooms, list_bathrooms, list_prices  = webScraping()
-    # print(f'len list location: {len(list_locations)},len  list property type: {len(list_property_type)} ,len list square: {len(list_squaredMeter)}, len list rooms: {len(list_rooms)}, len list bathrooms: {len(list_bathrooms)}, len list prices: {len(list_prices)}')
 
     data = {
         'location': list_locations,

@@ -32,7 +32,7 @@ class HomeViewController(QMainWindow):
         rooms = int(self.ui.spinBox_numHabitaciones.text())
         bathrooms = int(self.ui.spinBox_numBanios.text())
 
-        if(location == 'COMITAN' and propertyType == 'DEPARTAMENTO'):
+        if(location == 'COMITÁN' and propertyType == 'DEPARTAMENTO'):
             self.ui.label_errorDepartamento.setVisible(True) 
         else:
             if(location == 'TUXTLA GUTIÉRREZ'):
