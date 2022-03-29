@@ -54,9 +54,10 @@ class Ui_MainWindow(object):
         self.doubleSpinBox_metrosCuadrados.setGeometry(QtCore.QRect(480, 150, 62, 22))
         self.doubleSpinBox_metrosCuadrados.setStyleSheet("color: rgb(255, 255, 255);\n"
 "background-color: rgb(24, 48, 72);")
+        self.doubleSpinBox_metrosCuadrados.setMinimum(50.0)
         self.doubleSpinBox_metrosCuadrados.setMaximum(1000.0)
         self.doubleSpinBox_metrosCuadrados.setSingleStep(10.0)
-        self.doubleSpinBox_metrosCuadrados.setProperty("value", 0.0)
+        self.doubleSpinBox_metrosCuadrados.setProperty("value", 50.0)
         self.doubleSpinBox_metrosCuadrados.setObjectName("doubleSpinBox_metrosCuadrados")
         self.pushButton_consultarPrecio = QtWidgets.QPushButton(self.centralwidget)
         self.pushButton_consultarPrecio.setGeometry(QtCore.QRect(430, 230, 141, 28))

@@ -28,8 +28,3 @@ def cargar_modelado():
 
     history = model.fit(x_train,yd_train, epochs=50, validation_data=(x_test,yd_test))
     return model, history
-
-# modelo, historial = cargar_modelado()
-# result = modelo.predict([[0,0,100,3,2]])
-# print(result)
-
